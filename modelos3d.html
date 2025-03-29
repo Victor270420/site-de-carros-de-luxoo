@@ -1,0 +1,329 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cars</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>/* Estilo para o contêiner principal que envolve o texto e a imagem */
+    body {
+      background-color: #333; /* Fundo escuro */
+      color: white;
+      font-family: Arial, sans-serif;
+      margin: 0;
+      padding: 0;
+    }
+    .container {
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 20px;
+    }
+    .title {
+      text-align: center;
+      font-size: 36px;
+      font-weight: bold;
+      margin-bottom: 40px;
+    }
+    .car-box {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      width: 90%;
+      max-width: 1200px;
+      background-color: #444;
+      padding: 30px;
+      border-radius: 10px;
+      box-shadow: 0 5px 10px rgba(0,0,0,0.3);
+      margin-bottom: 40px;
+    }
+    /* Intercala as seções: pares em row-reverse */
+    .car-box:nth-child(even) {
+      flex-direction: row-reverse;
+    }
+    .text {
+      flex: 1;
+      padding: 20px;
+      font-size: 20px;
+    }
+    .text h2 {
+      font-size: 32px;
+      margin-bottom: 15px;
+      font-weight: bold;
+    }
+    .text p {
+      font-size: 16px;
+      line-height: 1.5;
+      color: #ccc;
+    }
+    .model {
+      flex: 1;
+      display: flex;
+      justify-content: center;
+    }
+    .model iframe {
+      width: 600px;
+      height: 400px;
+      border-radius: 10px;
+    }
+    @media (max-width: 768px) {
+      .car-box {
+        flex-direction: column !important;
+        text-align: center;
+        padding: 20px;
+      }
+      .model iframe {
+        width: 100%;
+        height: 300px;
+      }
+    }
+        </style>
+</head>
+
+<body>
+
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="logo">
+              <h1>LUXURY CARS</h1>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="Pagina_incial.html">Modelos</a></li>
+                <li><a href="Pagina_incial.html">Clientes</a></li>
+                <li><a href="Pagina_incial.html">Localização</a></li>
+                <li><a href="Pagina_incial.html">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section with Video Slider -->
+    <main class="hero-section">
+        <div class="video-slider">
+            <!-- McLaren P1 Section -->
+            <section class="car-slide active" data-car="mclaren-p1">
+                <div class="video-container">
+                    <div id="player1" class="background-video"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="car-content">
+                    <h2 class="car-name">McLaren W1</h2>
+                    <a href="#W1" class="cta-button">Ver Modelo 3D</a>
+                </div>
+            </section>
+
+            <!-- LaFerrari Section -->
+            <section class="car-slide" data-car="laferrari">
+                <div class="video-container">
+                    <div id="player2" class="background-video"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="car-content">
+                    <h2 class="car-name">LaFerrari</h2>
+                    <a href="#laferrari" class="cta-button">Ver Modelo 3D</a>
+                </div>
+            </section>
+
+            <!-- Bugatti Chiron Section -->
+            <section class="car-slide" data-car="bugatti-chiron">
+                <div class="video-container">
+                    <div id="player3" class="background-video"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="car-content">
+                    <h2 class="car-name">Bugatti Chiron</h2>
+                    <a href="#bugatti" class="cta-button">Ver Modelo 3D</a>
+                </div>
+            </section>
+        </div>
+        <!-- Koenigsegg -->
+        <section class="car-slide" data-car="Koenigsegg">
+            <div class="video-container">
+                <div id="player4" class="background-video"></div>
+            </div>
+            <div class="overlay"></div>
+            <div class="car-content">
+                <h2 class="car-name">Koenigsegg Jesko</h2>
+                <a href="#jesko" class="cta-button">Ver Modelo 3D</a>
+            </div>
+        </section>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-navigation">
+            <button class="nav-button prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-button next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+    </main>
+    <section>
+        <div class="container">
+            <div class="title">Carros de Luxo à Pronta Entrega</div>
+        
+            <!-- Seção 1: McLaren P1 (Imagem à direita, texto à esquerda) -->
+            <div class="car-box">
+              <div class="model">
+                <iframe title="McLaren P1" src="https://sketchfab.com/models/747cedadc302451db61deafc85941395/embed" allowfullscreen></iframe>
+              </div>
+              <div class="text" id="W1">
+                <h2>McLaren W1</h2>
+                <p>O McLaren W1 é um hipercarro híbrido de alta performance, combinando 916 cv e tecnologia de ponta para proporcionar uma experiência única e exclusiva.</p>
+              </div>
+            </div>
+        
+            <!-- Seção 2: Bugatti Chiron Pur Sport (Imagem à esquerda, texto à direita) -->
+            <div class="car-box">
+              <div class="text" id="bugatti">
+                <h2>Bugatti Chiron Pur Sport</h2>
+                <p>Com um motor W16 quad-turbo de 1.500 cv, o Chiron Pur Sport redefine os limites da velocidade e do luxo, entregando uma performance sem igual.</p>
+              </div>
+              <div class="model">
+                <iframe title="Bugatti Chiron Pur Sport" src="https://sketchfab.com/models/f791c209b88249e9856a552672b64fea/embed" allowfullscreen></iframe>
+              </div>
+            </div>
+        
+            <!-- Seção 3: Ferrari LaFerrari (Imagem à direita, texto à esquerda) -->
+            <div class="car-box">
+              <div class="model">
+                <iframe title="Ferrari LaFerrari" src="https://sketchfab.com/models/979f7085012e4d6399f38de3f9c39012/embed" allowfullscreen></iframe>
+              </div>
+              <div class="text" id="laferrari">
+                <h2>Ferrari LaFerrari</h2>
+                <p>A LaFerrari é o primeiro híbrido da Ferrari, combinando um potente V12 de 6.3L com tecnologia de Fórmula 1 para um desempenho extraordinário.</p>
+              </div>
+            </div>
+        
+            <!-- Seção 4: Koenigsegg Jesko Absolut (Imagem à esquerda, texto à direita) -->
+            <div class="car-box">
+              <div class="text" id="jesko">
+                <h2>Koenigsegg Jesko Absolut</h2>
+                <p>Projetado para quebrar recordes de velocidade, o Jesko Absolut foi desenvolvido para atingir mais de 500 km/h, combinando inovação e precisão.</p>
+              </div>
+              <div class="model">
+                <iframe title="Koenigsegg Jesko Absolut" src="https://sketchfab.com/models/79d63459afd347c1999e9c0312c3b756/embed" allowfullscreen></iframe>
+              </div>
+            </div>
+    </section>
+    <script>
+
+        var player1, player2, player3, player4;
+
+        function onYouTubeIframeAPIReady() {
+
+            player1 = new YT.Player('player1', {
+                videoId: 'RjJver7mPlg',  // Novo vídeo da McLaren P1
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'RjJver7mPlg',
+                    'mute': 1,
+                    'start': 19, // Começa no segundo 10 (ajuste conforme necessário)
+                    'end': 71,  // Termina no segundo 40
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+
+            player2 = new YT.Player('player2', {
+                videoId: 'IEQkph1dmmo',  // Novo vídeo da LaFerrari
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'IEQkph1dmmo',
+                    'mute': 1,
+                    'start': 40, // Começa no segundo 15 (ajuste conforme necessário)
+                    'end': 120,  // Termina no segundo 45
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+            player4 = new YT.Player('player4', {
+                videoId: 'Kfj1SJBaeuQ',  // Novo vídeo da McLaren P1
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'Kfj1SJBaeuQ',
+                    'mute': 1,
+                    'start': 31, // Começa no segundo 10 (ajuste conforme necessário)
+                    'end': 120,  // Termina no segundo 40
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+
+
+            player3 = new YT.Player('player3', {
+                videoId: 'PkkV1vLHUvQ', // Bugatti Chiron (mantendo o mesmo)
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'PkkV1vLHUvQ',
+                    'mute': 1,
+                    'start': 50,
+                    'end': 120,
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+    </script>
+
+    <script src="js/main.js"></script>
+
+
+</body>
+</html>

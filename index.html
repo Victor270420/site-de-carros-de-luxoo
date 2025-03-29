@@ -1,0 +1,704 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Luxury Cars</title>
+    <link rel="stylesheet" href="styles/main.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://www.youtube.com/iframe_api"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Merriweather+Sans:ital,wght@0,300..800;1,300..800&family=Montserrat+Alternates:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&family=Playfair+Display:ital,wght@0,400..900;1,400..900&family=Raleway:ital,wght@0,100..900;1,100..900&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap');
+        hr{
+            color: #fff;
+        }
+        .title {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 3rem;
+            color: #ffff;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+        }
+
+        .title .comentario {
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 3rem;
+            color: rgb(255, 255, 255);
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+        }
+
+        .title span {
+            color: #ffd700;
+            text-transform: uppercase;
+            justify-content: center;
+        }
+
+        .hero-modelo .row {
+            display: flex;
+            align-items: center;
+            background-color: #2F2F2F;
+            gap: 2rem;
+        }
+
+        .hero-modelo .row .modelo-conteiner {
+            padding: 2rem;
+        }
+
+        .hero-modelo .row .modelo-conteiner h3 {
+            display: flex;
+            justify-content: center;
+            font-size: 3rem;
+            color: #ffff;
+        }
+
+        .hero-modelo .row .modelo-conteiner p {
+            font-size: 1.5rem;
+            color: #ffff;
+            padding: 1rem 0;
+            line-height: 1.8;
+        }
+
+        .cta-car {
+            display: inline-block;
+            padding: 15px 40px;
+            background: transparent;
+            border: 2px solid #fff;
+            color: #fff;
+            text-decoration: none;
+            text-transform: uppercase;
+            letter-spacing: 2px;
+            transition: all 0.3s ease;
+            transition: all 0.4s ease 0.6s;
+        }
+
+        .cta-car:hover {
+            background: #fff;
+            color: #000;
+        }
+
+        .menu .box-continer {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            /* 2 colunas */
+            grid-template-rows: repeat(2, auto);
+            /* As linhas se ajustam ao conteúdo */
+            gap: 2rem;
+            justify-content: center;
+            align-items: stretch;
+            padding: 2rem;
+            margin-top: 2rem;
+        }
+
+        .menu .box-continer .box {
+            background: #2F2F2F;
+            /* Fundo escuro */
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Alinha o conteúdo no topo */
+            align-items: center;
+            border-radius: 10px;
+            min-height: 350px;
+            /* Garantindo uma altura mínima */
+            width: 100%;
+            /* Preenche o espaço */
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+            /* Transição suave */
+        }
+
+        .box img {
+            width: 100%;
+            max-width: 350px;
+            /* Imagem maior */
+            height: 220px;
+            /* Ajusta a altura da imagem */
+            object-fit: contain;
+            /* Mantém a proporção sem cortar */
+            border-radius: 2px;
+            margin-bottom: 1rem;
+            /* Espaço entre imagem e texto */
+
+        }
+
+        .box h3 {
+            padding: 2rem;
+            font-size: 1.15rem;
+            color: #fff;
+        }
+
+        .box p {
+            padding-bottom: 2rem;
+        }
+
+        .box .price {
+            font-size: 2.5rem;
+            padding: 1.5rem, 0rem;
+            padding-bottom: 2rem;
+        }
+
+        .box .price span {
+            font-size: 1.5rem;
+            text-decoration: line-through;
+            font-weight: lighter;
+        }
+
+        .menu .box-continer .box:hover {
+            background: rgba(50, 50, 50, 0.9);
+
+            filter: brightness(1.2);
+            /* Aumenta levemente o brilho */
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            /* Glow branco */
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            /* Borda sutil branca */
+            transform: scale(1.02);
+            /* Pequeno zoom no hover */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .W1 {
+
+            color: #f98e1d;
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+
+        }
+
+        .LaFerrari {
+
+            color: #cf0e0e;
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+
+        }
+
+        .Koenigsegg span {
+            color: #ffd700;
+
+        }
+
+        .Bugatti {
+
+            color: #77a2d1;
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+
+        }
+
+        .Bugatti span {
+            color: #233dff;
+
+        }
+
+        .Koenigsegg {
+
+            color: #000;
+            text-align: center;
+            font-size: 2rem;
+            text-transform: uppercase;
+
+        }
+
+        .Koenigsegg span {
+            color: #ffd700;
+
+        }
+
+        .menu .box-continer2 {
+            display: flex;
+            grid-template-columns: repeat(auto, 1fr);
+            gap: 2rem;
+            justify-content: center;
+            align-items: stretch;
+            padding: 2rem;
+        }
+
+        .menu .box-continer2 .box {
+            /* Fundo escuro */
+
+            padding: 2rem;
+            text-align: center;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-start;
+            /* Alinha o conteúdo no topo */
+            align-items: center;
+            border-radius: 10px;
+            min-height: 350px;
+            /* Garantindo uma altura mínima */
+            width: 80%;
+            /* Preenche o espaço */
+            box-sizing: border-box;
+            transition: all 0.3s ease-in-out;
+            /* Transição suave */
+        }
+
+        .menu .box-continer2 .box p{
+            font-family: "Montserrat Alternates", sans-serif;
+  }
+ 
+        .menu .box-continer2 .box:hover {
+            background: rgba(24, 23, 23, 0.9);
+
+            filter: brightness(1.2);
+            /* Aumenta levemente o brilho */
+            box-shadow: 0px 0px 20px rgba(255, 255, 255, 0.5);
+            /* Glow branco */
+            border: 2px solid rgba(255, 255, 255, 0.8);
+            /* Borda sutil branca */
+            transform: scale(1.02);
+            /* Pequeno zoom no hover */
+            transition: all 0.3s ease-in-out;
+        }
+
+        .stars img {
+            width: 30px;
+            height: 30px;
+        }
+
+        .address {
+            display: flex;
+            align-items: center;
+            flex-direction: column;
+        }
+
+        .footer {
+            text-align: center;
+        }
+
+        .footer .share {
+            padding: 1rem 0;
+        }
+
+        .footer .share img {
+            margin: 0.3rem;
+            cursor: pointer;
+            border-radius: 50%;
+            transition: 1s;
+        }
+
+        .desconto-text {
+            color: #008000;
+            margin-top: 2rem;
+            text-align: center;
+            font-size: 3rem;
+            text-transform: uppercase;
+            margin-bottom: 4rem;
+
+        }
+
+        .relogiooo {
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: #cf0e0e;
+            text-transform: uppercase;
+            font-size: 2rem;
+            text-shadow:
+                0 0 10px rgba(246, 38, 38, 0.8),
+                /* Brilho branco */
+                0 0 15px rgba(251, 26, 26, 0.6),
+                /* Brilho mais forte */
+                0 0 20px rgba(187, 8, 8, 0.4);
+            /* Brilho ainda mais forte */
+            font-size: 24x;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+        .cronometroo{
+            display: flex;
+            justify-content: center;
+            text-align: center;
+            color: #cf0e0e;
+            text-transform: uppercase;
+            font-size: 2rem;
+            text-shadow:
+                0 0 10px rgba(246, 38, 38, 0.8),
+                /* Brilho branco */
+                0 0 15px rgba(251, 26, 26, 0.6),
+                /* Brilho mais forte */
+                0 0 20px rgba(187, 8, 8, 0.4);
+            /* Brilho ainda mais forte */
+            font-size: 24x;
+            font-weight: bold;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- Header/Navigation -->
+    <header class="main-header">
+        <nav class="main-nav">
+            <div class="logo">
+                <h1>LUXURY CARS</h1>
+            </div>
+            <div class="menu-toggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+            <ul class="nav-links">
+                <li><a href="#menu">Modelos</a></li>
+                <li><a href="#Clientes">Clientes</a></li>
+                <li><a href="#Localização">Localização</a></li>
+                <li><a href="#desconto">Contato</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <!-- Main Hero Section with Video Slider -->
+    <main class="hero-section">
+        <div class="video-slider">
+            <!-- McLaren P1 Section -->
+            <section class="car-slide active" data-car="mclaren-p1">
+                <div class="video-container">
+                    <div id="player1" class="background-video"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="car-content">
+                    <h2 class="car-name">McLaren W1</h2>
+                    <p class="car-description">Poder. Precisão. Perfeição.</p>
+                    <a href="package.json" class="cta-button">Ver Modelo</a>
+                </div>
+            </section>
+
+            <!-- LaFerrari Section -->
+            <section class="car-slide" data-car="laferrari">
+                <div class="video-container">
+                    <div id="player2" class="background-video"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="car-content">
+                    <h2 class="car-name">LaFerrari</h2>
+                    <p class="car-description">A Essência da Velocidade</p>
+                    <a href="#learn-more" class="cta-button">Ver Modelo</a>
+                </div>
+            </section>
+
+            <!-- Bugatti Chiron Section -->
+            <section class="car-slide" data-car="bugatti-chiron">
+                <div class="video-container">
+                    <div id="player3" class="background-video"></div>
+                </div>
+                <div class="overlay"></div>
+                <div class="car-content">
+                    <h2 class="car-name">Bugatti Chiron</h2>
+                    <p class="car-description">O Ápice da Engenharia</p>
+                    <a href="#learn-more" class="cta-button">Ver Modelo</a>
+                </div>
+            </section>
+        </div>
+        <!-- Koenigsegg -->
+        <section class="car-slide" data-car="Koenigsegg">
+            <div class="video-container">
+                <div id="player4" class="background-video"></div>
+            </div>
+            <div class="overlay"></div>
+            <div class="car-content">
+                <h2 class="car-name">Koenigsegg Jesko</h2>
+                <p class="car-description">A Definição da Velocidade</p>
+                <a href="#learn-more" class="cta-button">Ver Modelo</a>
+            </div>
+        </section>
+        </div>
+
+        <!-- Navigation Arrows -->
+        <div class="slider-navigation">
+            <button class="nav-button prev">
+                <i class="fas fa-chevron-left"></i>
+            </button>
+            <button class="nav-button next">
+                <i class="fas fa-chevron-right"></i>
+            </button>
+        </div>
+
+        <!-- Slide Indicators -->
+        <div class="slide-indicators">
+            <span class="indicator active" data-slide="0"></span>
+            <span class="indicator" data-slide="1"></span>
+            <span class="indicator" data-slide="2"></span>
+            <span class="indicator" data-slide="3"></span>
+        </div>
+    </main>
+    <section class="menu" id="menu">
+        <div class="box-continer">
+            <div class="box">
+                <span class="W1">W1</span>
+                <img src="https://p2.trrsf.com/image/fget/cf/774/0/images.terra.com/2024/10/08/444108_1128126_original_16850_mclaren_w1_front_3_4_high_black-1iv73ca2t8iuc.jpg"
+                    alt="">
+                <h3>Potência e tecnologia avançada em um design exclusivo. Desempenho superior e aerodinâmica refinada
+                    elevam sua experiência ao extremo, garantindo velocidade e controle precisos.</h3>
+                <div class="price">$2,100,000 <span>$3,000,000</span></div>
+                <a href="modelos3d.html" class="cta-car">Ver Modelo</a>
+            </div>
+            <div class="box">
+                <span class="LaFerrari">LaFerrari</span>
+                <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR7OhCUhpnvq16s7yytcANpu687b9uIHN7qsQ&s"
+                    alt="">
+                <h3> Engenharia híbrida de alto desempenho com DNA de corrida. Uma fusão perfeita entre inovação,
+                    potência e exclusividade, entregando uma condução única e emocionante.</h3>
+                <div class="price">$3,300,000 <span>$4,000,000</span></div>
+                <a href="modelos3d.html" class="cta-car">Ver Modelo</a>
+            </div>
+            <div class="box">
+                <span class="Bugatti">Bugatti <span>Chiron</span></span>
+                <img src="https://www.cnnbrasil.com.br/wp-content/uploads/sites/12/2024/07/Bugatti-Chiron-Sport-nas-ruas-de-SP-foto-Paito-Motors-7.jpg?w=795"
+                    alt="">
+                <h3> Luxo e velocidade combinados em uma máquina inigualável. Com motor W16 e aerodinâmica avançada,
+                    redefine os limites do desempenho automotivo com excelência.</h3>
+                <div class="price">$3,500,000 <span>$4,400,000</span></div>
+                <a href="modelos3d.html" class="cta-car">Ver Modelo</a>
+            </div>
+            <div class="box">
+                <span class="Koenigsegg Jesko">Koenigsegg <span class="Koenigsegg">Jesko</span></span>
+                <img src="https://www.webmotors.com.br/wp-content/uploads/2024/01/03133002/Koenigsegg-Jesko-2.webp"
+                    alt="">
+                <h3>Criado para dominar as pistas, possui tecnologia revolucionária. Seu design leve e aerodinâmico
+                    maximiza a velocidade, tornando-se uma obra-prima da engenharia.</h3>
+                <div class="price">$3,000,000 <span>$3,500,000</span></div>
+                <a href="modelos3d.html" class="cta-car">Ver Modelo</a>
+            </div>
+        </div>
+    </section>
+    <section class="menu" id="Clientes">
+        <h2 class="title"><span class="comentario">Comentários</span></h2>
+        <div class="box-continer2">
+            <div class="box">
+                <p>" Tudo foi perfeito, desde a escolha do modelo até a entrega. Com certeza voltarei! "</p>
+                <img src="data:image/png;base64,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"
+                    alt="Foto-cliente">
+                <h3>João da Silva</h3>
+                <div class="stars">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                </div>
+            </div>
+            <div class="box">
+                <p>" Fiquei impressionado com a qualidade e velocidade de entrega do serviço. "</p>
+                <img src="data:image/png;base64,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"
+                    alt="Foto-cliente">
+                <h3>Cleber </h3>
+                <div class="stars">
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                    <img width="30" height="30" src="https://img.icons8.com/ios-filled/50/ffffff/star--v1.png"
+                        alt="star--v1" />
+                </div>
+            </div>
+    </section>
+
+    <section class="address" id="Localização">
+        <h2 class="title">Nosso <span>Endereço</span></h2>
+        <iframe
+            src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3656.8108395779163!2d-46.678079999999994!3d-23.5752363!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x94ce5765a9f4c123%3A0xb55314927a908cb8!2sAv.%20Europa%20-%20Pinheiros%2C%20S%C3%A3o%20Paulo%20-%20SP%2C%2001449-001!5e0!3m2!1spt-BR!2sbr!4v1742766139998!5m2!1spt-BR!2sbr"
+            width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy"
+            referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </section>
+    <section class="footer">
+        <div class="share">
+            <img width="30" height="30" src="https://img.icons8.com/ios-glyphs/30/ffffff/twitterx--v2.png"
+                alt="twitterx--v2" />
+            <img width="30" height="30" src="https://img.icons8.com/ios/30/ffffff/youtube-play--v1.png"
+                alt="youtube-play--v1" />
+            <img width="30" height="30" src="https://img.icons8.com/ios/30/ffffff/whatsapp--v1.png"
+                alt="whatsapp--v1" />
+        </div>
+    </section>
+    <hr>
+    <footer class="desconto" id="desconto">
+        <div id="relogio" class="relogiooo"></div>
+
+        <div id="cronometro" class="cronometroo">
+            Promoção acaba em 2 dias:
+            <span id="tempoRestante"></span>
+        </div>
+        <script>
+            function iniciarCronometro() {//Define o tempo final da promoção  e atualiza sozinho
+                var agora = new Date().getTime()
+                var tempoFinal = agora + (2 * 24 * 60 * 60 * 1000)//2 dias em millesegundos
+                function atualizaCronometro() {
+                    var agora = new Date().getTime()
+                    var diferenca = tempoFinal - agora
+
+                    document.getElementById("tempoRestante").innerText = diferenca
+                    var dias = Math.floor(diferenca / (1000 * 60 * 60 * 24));
+                    var horas = Math.floor((diferenca % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+                    var minutos = Math.floor((diferenca % (1000 * 60 * 60)) / (1000 * 60));
+                    var segundos = Math.floor((diferenca % (1000 * 60)) / 1000);
+
+                    // Exibe o tempo restante no formato: "XX dias XX:XX:XX"
+                    document.getElementById("tempoRestante").innerText =
+                        dias + "d " + horas + "h " + minutos + "m " + segundos + "s";
+
+                    // Se o tempo acabou, parar o cronômetro
+                    if (diferenca <= 0) {
+                        clearInterval(intervalo);
+                        document.getElementById("tempoRestante").innerText = "Promoção encerrada!";
+                    }
+                }
+
+                // Atualiza o cronômetro a cada 1 segundo
+                var intervalo = setInterval(atualizaCronometro, 1000);
+            }
+
+            // Inicia o cronômetro quando a página carregar
+            iniciarCronometro();
+        </script>
+    </footer>
+    <footer>
+        <p>&copy; 2025 Luxury Cars. Todos os direitos reservados.</p>
+    </footer>
+
+    <script>
+
+        var player1, player2, player3, player4;
+
+        function onYouTubeIframeAPIReady() {
+
+            player1 = new YT.Player('player1', {
+                videoId: 'RjJver7mPlg',  // Novo vídeo da McLaren P1
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'RjJver7mPlg',
+                    'mute': 1,
+                    'start': 19, // Começa no segundo 10 (ajuste conforme necessário)
+                    'end': 71,  // Termina no segundo 40
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+
+            player2 = new YT.Player('player2', {
+                videoId: 'IEQkph1dmmo',  // Novo vídeo da LaFerrari
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'IEQkph1dmmo',
+                    'mute': 1,
+                    'start': 40, // Começa no segundo 15 (ajuste conforme necessário)
+                    'end': 120,  // Termina no segundo 45
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+            player4 = new YT.Player('player4', {
+                videoId: 'Kfj1SJBaeuQ',  // Novo vídeo da McLaren P1
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'Kfj1SJBaeuQ',
+                    'mute': 1,
+                    'start': 31, // Começa no segundo 10 (ajuste conforme necessário)
+                    'end': 120,  // Termina no segundo 40
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+
+
+            player3 = new YT.Player('player3', {
+                videoId: 'PkkV1vLHUvQ', // Bugatti Chiron (mantendo o mesmo)
+                playerVars: {
+                    'autoplay': 1,
+                    'controls': 0,
+                    'showinfo': 0,
+                    'modestbranding': 1,
+                    'loop': 1,
+                    'playlist': 'PkkV1vLHUvQ',
+                    'mute': 1,
+                    'start': 50,
+                    'end': 120,
+                    'cc_load_policy': 0,
+                    'iv_load_policy': 3,
+                    'rel': 0
+                },
+                events: {
+                    'onReady': onPlayerReady
+                }
+            });
+        }
+
+        function onPlayerReady(event) {
+            event.target.playVideo();
+        }
+    </script>
+
+    <script src="js/main.js"></script>
+
+    <script>
+        function atualizarRelogioi() {//Atualiza com o servidor
+            var agora = new Date()
+            var horas = agora.getHours().toString().padStart(2, '0')
+            var minutos = agora.getMinutes().toString().padStart(2, '0')
+            var segundos = agora.getSeconds().toString().padStart(2, '0')
+
+            document.getElementById("relogio").innerText = horas + ":" + minutos + ":" + segundos
+        }
+        setInterval(() => {
+            atualizarRelogioi()
+        });
+        
+
+    </script>
+
+    <!-- Função para tocar o som do motor correspondente -->
+    <script>
+        function playSound(car) {
+            let audio = new Audio(car + '.mp3'); // Supondo que os arquivos de som estejam nomeados como 'mclaren-w1-roar.mp3', etc.
+            audio.play();
+        }
+    </script>
+</body>
+
+</html>
